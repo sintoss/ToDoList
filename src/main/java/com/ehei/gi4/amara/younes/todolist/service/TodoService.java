@@ -10,8 +10,9 @@ import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
+
 @Service
-public class TodoService{
+public class TodoService {
     private final TodoRepository todoRepository;
 
     public TodoService(TodoRepository todoRepository) {
@@ -19,8 +20,8 @@ public class TodoService{
     }
 
 
-        public List<Todo> getTodosByUser(String  login) {
-            return todoRepository.findByUserLogin(login);
+    public List<Todo> getTodosByUser(String login) {
+        return todoRepository.findByUserLogin(login);
     }
 
 
@@ -35,7 +36,7 @@ public class TodoService{
 
 
     public void addTodo(String desc, LocalDateTime targetDate, User user) {
-        todoRepository.save(new Todo(desc, targetDate,user));
+        todoRepository.save(new Todo(desc, targetDate, user));
     }
 
 
